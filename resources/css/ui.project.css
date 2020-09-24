@@ -45,15 +45,15 @@ html[page="3"] .selected button{color:#000}
 html[page="4"] .selected button{color:#000}
 
 .btn-talk{position:fixed; top:15px; right:23px; width:40px; height:40px; border-radius:50%; z-index:10; background:#fff; box-shadow:5px 5px 10px rgba(0,0,0,0.1); justify-content:center; align-items:center; display:flex; }
-.btn-talk::after{content:""; display:block; width:26px; height:26px; background:url(/resources/img/common/ico-talk-on.png) no-repeat 50% 50% / cover; flex:0 26px;}
+.btn-talk::after{content:""; display:block; width:26px; height:26px; background:url(../img/common/ico-talk-on.png) no-repeat 50% 50% / cover; flex:0 26px;}
 
 /* main swiper */
 .base-main .slidepage-item{padding-top:120px; height:100%; position: relative; overflow-x: hidden;}
-.slidepage-item.type-a{background:url(/resources/img/common/pagebg_a.jpg) repeat 50% 50% / cover;}
-.slidepage-item.type-b{background:url(/resources/img/common/pagebg_b.jpg) repeat 50% 50% / cover;}
-.slidepage-item.type-c{background:url(/resources/img/common/pagebg_c.jpg) repeat 50% 50% / cover;}
-.slidepage-item.type-d{background:url(/resources/img/common/pagebg_d.jpg) repeat 50% 50% / cover;}
-.slidepage-item.type-e{background:url(/resources/img/common/pagebg_e.jpg) repeat 50% 50% / cover;}
+.slidepage-item.type-a{background:url(../img/common/pagebg_a.jpg) repeat 50% 50% / cover;}
+.slidepage-item.type-b{background:url(../img/common/pagebg_b.jpg) repeat 50% 50% / cover;}
+.slidepage-item.type-c{background:url(../img/common/pagebg_c.jpg) repeat 50% 50% / cover;}
+.slidepage-item.type-d{background:url(../img/common/pagebg_d.jpg) repeat 50% 50% / cover;}
+.slidepage-item.type-e{background:url(../img/common/pagebg_e.jpg) repeat 50% 50% / cover;}
 
 
 
