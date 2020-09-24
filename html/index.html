@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <title>template</title>
+
+        <link rel="stylesheet" href="/resources/css/ui.base.css">
+        <style>
+            .base-wrap{width:100%; height:100%;}
+            .base-header{position:fixed; top:0; left:0; z-index:10; width:100%; height:150px;}
+            .base-main{width:100%; height:100%; position:relative; padding:0}
+
+            .ui-slidepage{width:100%; height:100%; position:relative; overflow:hidden}
+            .ui-slidepage-wrap{position:absolute; top:0; left:0; height:100%;  }
+            .ui-slidepage-item{width:100vw; height:100%; flex:0 100vw; padding-top:150px;}
+            .ui-slidepage-wrap .base-main{display:flex;}
+            .ui-slidepage-item.type-a{background:lightpink}
+            .ui-slidepage-item.type-b{background:lightseagreen}
+            .ui-slidepage-item.type-c{background:lightgrey}
+            .ui-slidepage-item.type-d{background:lightsteelblue}
+        </style>
+    </head>
+    <body>
+        <div class="base-wrap ui-slidepage" id="slidePage">
+            <div class="ui-slidepage-wrap">
+                <header class="base-header">
+                    <div class="header-wrap">
+                        <h1 class="header-bi">BI</h1>
+                        <nav class="header-nav">
+                            <ul>
+                                <li><button type="button"><span>메뉴1</span></button></li>
+                                <li><button type="button"><span>메뉴2</span></button></li>
+                                <li><button type="button"><span>메뉴메뉴3</span></button></li>
+                                <li><button type="button"><span>메뉴메4</span></button></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
+                <main class="base-main">
+                        
+                    <section class="ui-slidepage-item page-container type-a" page="1">
+                        <h1>보장</h1>
+                        <div>
+                            <button type="button">
+                                <strong>라인하님,</strong>
+                                <span>가입하신 보험계약정보를 확인해주세요.</span>
+                            </button>
+                        </div>
+
+                        <article class="page-content">
+                            <h2>제목</h2>
+                            <p>내용...</p>
+                        </article>
+                    </section>
+                    <section class="ui-slidepage-item page-container type-b" page="2">
+                        <h1>보장개시</h1>
+                        <div>
+                            <button type="button">
+                                <strong>라인하님,</strong>
+                                <span>가입하신 보험계약정보를 확인해주세요.</span>
+                            </button>
+                        </div>
+
+                        <article>
+                            <h2>제목</h2>
+                            <p>내용...</p>
+                        </article>
+                    </section>
+                    <section class="ui-slidepage-item page-container type-c" page="3">
+                        <h1>계약자 정보</h1>
+                        <div>
+                            <button type="button">
+                                <strong>라인하님,</strong>
+                                <span>가입하신 보험계약정보를 확인해주세요.</span>
+                            </button>
+                        </div>
+
+                        <article>
+                            <h2>제목</h2>
+                            <p>내용...</p>
+                        </article>
+                    </section>
+                    <section class="ui-slidepage-item page-container type-d" page="4">
+                        <h1>고객서비스</h1>
+                        <div>
+                            <button type="button">
+                                <strong>라인하님,</strong>
+                                <span>가입하신 보험계약정보를 확인해주세요.</span>
+                            </button>
+                        </div>
+
+                        <article>
+                            <h2>제목</h2>
+                            <p>내용...</p>
+                        </article>
+                    </section>
+                    
+                </main>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="/resources/js/ui.global.js"></script>
+        <script>
+            $plugins.get = {};
+            $plugins.get.XY = function(event){
+                var ev = event;
+                var xy = {};
+
+                 if (ev.touches === undefined) {
+                    if (ev.pageX === undefined) {
+                        xy.x = ev.clientX;
+                        xy.y = ev.clientY;
+                    } else {
+                        xy.x = ev.pageX;
+                        xy.y = ev.pageY;
+                    }
+                } else {
+                    if (!!ev.touches[0]) {
+                        xy.x = ev.touches[0].pageX;
+                        xy.y = ev.touches[0].pageY;
+                    }
+                }
+
+                return xy;
+            }
+            $plugins.get.moveGap = function(start, move) {
+                /*
+                start : [x,y] (시작 위치 정보)
+                move : [x,y] (무브 위치 정보)
+                */
+                return {
+                    x : start[0] - move[0],
+                    y : start[1] - move[1]
+                };
+            }
+
+            $plugins.set = {};
+            $plugins.set.evntDragType = function(opt){
+                /*
+                mouseDrag : true/false (마우스드래그 여부)
+                touchDrag : true/false (터치드래그 여부)
+                name : 'name' (이벤트 네임스페이스 설정)
+                */
+                var types = ['as', 'ever', 'j', 'o'];
+                var name = opt.name;
+                var mouseDrag = opt.mouseDrag;
+                var touchDrag = opt.touchDrag;
+
+                var typeTS = 'touchstart.' + name;
+                var typeTM = 'touchmove.' + name;
+                var typeTE = 'touchend.' + name;
+                var typeTC = 'touchcancel.' + name;
+                var typeMD = 'mousedown.' + name;
+                var typeMM = 'mousemove.' + name;
+                var typeMU = 'mouseup.' + name;
+                var typeC = 'click.' + name;
+
+                if (mouseDrag === true && touchDrag === true) {
+                    types = [typeTS+' '+typeMD, typeTM+' '+typeMM, typeTE+' '+typeTC+' '+typeMU, typeC];
+                } else if (mouseDrag === false && touchDrag === true) {
+                    types = [typeTS, typeTM, typeTE+' '+typeTC+' '+typeMU, typeC];
+                } else if (mouseDrag === true && touchDrag === false) {
+                    types = [typeMD, typeMM, typeMU, typeC];
+                }
+                
+                return {
+                    start: types[0],
+                    move: types[1],
+                    end: types[2],
+                    click: types[3]
+                };
+            }
+
+            $plugins.uiSlidePage = function(opt){
+                var $slidePage = $('#' + opt.id);
+                var $wrap = $slidePage.find('.ui-slidepage-wrap');
+                var $item = $wrap.find('.ui-slidepage-item');
+                var len = $item.length;
+                var evntType = {};
+
+                $wrap.css('width', len * $(window).outerWidth());
+
+                evntType = $plugins.set.evntDragType({
+                    mouseDrag: true,
+                    touchDrag: true,
+                    name: 'slidepage'
+                });
+                
+                var sP = [];
+                var sXY = [];
+                var mXY = [];
+                var eXY = [];
+                var gap;
+
+                function set(){
+                    
+                }
+
+                function evntSwitch(t, v){
+                    var $this = t;
+                    var orgPs = $this.position();
+
+                    if (v) {
+                        $this.off(evntType.start).on(evntType.start, function(event){   
+                            event.preventDefault();
+                            
+                            var move = false;
+
+                            sP[0] = $(this).position().left;
+                            sP[1] = $(this).position().top;
+                            sXY[0] = $plugins.get.XY(event).x;
+                            sXY[1] = $plugins.get.XY(event).y;
+                            orgPs = $this.position();
+
+
+                            $this.off(evntType.move).on(evntType.move, function(event){
+                                event.preventDefault();
+
+                                move = true;
+                                mXY[0] = $plugins.get.XY(event).x;
+                                mXY[1] = $plugins.get.XY(event).y;
+                                gap = $plugins.get.moveGap(sXY, mXY);
+                                
+                                dragMoving({
+                                    target: $this,
+                                    org: orgPs,
+                                    gap: gap,
+                                    scope: $slidePage.outerWidth(),
+                                    dir: 'hor',
+                                    sum: len
+                                });
+                                
+                            });
+                            $this.off(evntType.end).on(evntType.end, function(event){
+                                event.preventDefault();
+                                if (move) {
+                                    eXY[0] = mXY[0] || sXY[0];
+                                    eXY[1] = mXY[1] || sXY[0];
+                                    gap = $plugins.get.moveGap(sXY, eXY);
+                                    
+                                    $this.off(evntType.move);
+                                    dragEnd({
+                                        target: $this,
+                                        org: orgPs,
+                                        gap: gap,
+                                        bounds: '20', //percent
+                                        scope: $slidePage.outerWidth(),
+                                        sum: len
+                                    });
+                                }
+                            });
+                        });
+                        
+                    } else {
+                        $this.off(evntType.start);
+                        $this.off(evntType.move);
+                        $this.off(evntType.end);
+                    }
+                }
+                evntSwitch($wrap, true);
+
+                function dragMoving(opt){
+                    var $this = opt.target;
+                    var org = opt.org;
+                    var gap = opt.gap;
+                    var w = opt.scope;
+                    var dir = opt.dir || 'hor';
+                    var n = 0;
+                    var sum = opt.sum;
+
+                    if (dir === 'hor') {
+                        n = org.left - gap.x;
+                        n > 0 ? n = n / 10 : '';
+                        
+                        if (sXY[0] > eXY[0] && Math.abs(sP[0]) === (w * (sum - 1))) {
+                            n = sP[0] + (gap.x * -1) / 10
+                        }
+
+                        $this.css('left', n);
+                    }
+                }
+
+
+                function dragEnd(opt){
+                    var $this = opt.target;
+                    var org = opt.org;
+                    var gap = opt.gap;
+                    var n = 0;
+                    var sum = opt.sum;
+                    var w = opt.scope;
+                    var bounds = opt.bounds;
+                    var per;
+                    var m;
+
+                    evntSwitch($this, false);
+
+                    if (Math.abs(org.left - gap.x) > Math.abs(org.top - gap.y)) {
+                        n = Math.abs(gap.x / w * 100);
+
+                        if (sP[0] >= 0 && sXY[0] < eXY[0] ) {
+                            n = n / 10;
+                            n > bounds ? n = bounds - 1 :'';
+                        }
+                        if (Math.abs(sP[0]) >= (w * (sum - 1)) && sXY[0] > eXY[0]) {
+                            n = n / 10;
+                            n > bounds ? n = bounds - 1 :'';
+                        }
+                        
+
+                        if (bounds > n) {
+                            console.log(2);
+                            $this
+                            .css('transition', 'left .2s ease-in')
+                            .css('left', org.left)
+                            .off('transitionend.slide').on('transitionend.slide', function(){
+                                $(this).css('transition', 'none');
+                                evntSwitch($this, true);
+                            });
+                        } else {
+                            console.log(1,sXY[0] , eXY[0]);
+                            if (sXY[0] > eXY[0]) {
+                                //next
+                                $this.css('left', (Math.abs($this.position().left - sP[0]) + (w - gap.x) +  Math.abs(sP[0])) * -1 );
+                            } else if (sXY[0] < eXY[0]) {
+                                $this.css('left', (Math.abs(sP[0] + $this.position().left) - (w + gap.x) -  Math.abs(sP[0])) * -1 );
+                            } else {
+                                console.log(77777);
+                                evntSwitch($this, true);
+                            }
+
+                            $this
+                            .css('transition', 'left .3s ease-out')
+                            .off('transitionend.slide').on('transitionend.slide', function(){
+                                $(this).css('transition', 'none');
+                                evntSwitch($this, true);
+                            });
+                            
+                        }
+                       
+                    } else {
+                        evntSwitch($this, true);
+                    }
+                }
+
+
+
+            }
+
+            $plugins.uiSlidePage({
+                id: 'slidePage',
+                mouseDrag: false,
+                touchDrag: true
+            
+            });
+        </script>
+
+    </body>
+</html>
