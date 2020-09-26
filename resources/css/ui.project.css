@@ -10,7 +10,7 @@ html[page="1"]{background:#7fcad4}
 html[page="2"]{background:#fab154}
 html[page="3"]{background:#6cace1}
 html[page="4"]{background:#8286d1}
-
+html[intro="true"]{background:#67b1ff}
 /* layout */
 html,
 body,
@@ -46,8 +46,11 @@ html[page="4"] .selected button{color:#505ed1;}
 .btn-round{padding:5px 20px; height:30px; border-radius:15px; text-align: center; position: relative;}
 .btn-round.ico-arrow{padding-right:30px;}
 .btn-round.ico-arrow::after{content:""; display:block; width:4.6px; height:8px; background:url(../img/common/ico-arrow2@3x.png) no-repeat 50% 50% / cover; position:absolute; top:50%; right:15px; margin:-4px 0 0}
-.btn-talk{position:fixed; top:12px; right:23px; width:40px; height:40px; border-radius:50%; z-index:200; background:#fff; box-shadow:5px 5px 10px rgba(0,0,0,0.1); justify-content:center; align-items:center; display:flex; }
+
+html[intro="true"] .btn-talk{z-index:101}
+.btn-talk{position:fixed; top:12px; right:23px; width:40px; height:40px; border-radius:50%; z-index:98; background:#fff; box-shadow:5px 5px 10px rgba(0,0,0,0.1); justify-content:center; align-items:center; display:flex; }
 .btn-talk::after{content:""; display:block; width:26px; height:26px; background:url(../img/common/ico-talk-on.png) no-repeat 50% 50% / cover; flex:0 26px;}
+.btn-talk.off::after{background:url(../img/common/ico-talk-off.png) no-repeat 50% 50% / cover;}
 
 .btn-arrow-modal .ico{display:block; width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,.3); position:absolute; top:50%; margin-top:-20px; right:0; }
 .btn-arrow-modal{font-size:18px; color:#fff; width:100%; position: relative; padding-right:50px; text-align:left;}
@@ -353,8 +356,51 @@ html[page="4"] .detail .base-wrap::after{content:""; display:block; width:100%; 
 
 .tip{display:inline-block; background:#29cfd6; color:#fff; padding:10px 20px; border-radius: 20px; width:auto; position: relative;}
 .tip::after{content:"▲"; display:block; position: absolute; font-size:20px; color:#29cfd6; top:-16px;}
+
+.page-main{display:none}
+.page-intro{position: absolute;; width:100%; min-height:100%; top:0; left:0; z-index:100; transform:translate(0,0); background:#67b1ff url(/lina/resources/img/common/pagebg-intro.jpg) no-repeat 0 0 / cover; transition: transform .3s ease-out; padding-bottom:100px}
+
+.page-intro .txt-slogan{font-family:'Nanum Pen Script', cursive; font-size:25px; color:#fff; text-align: center; width:100%;}
+.slogan{position: relative; width:calc(100% - 100px); border-top:3px solid #fff; border-bottom:3px solid #fff; padding:26px 0; text-align: center; overflow: hidden; margin:11vh 50px 28vh;}
+.slogan .ci img{display:inline-block; width:140px; vertical-align:middle;}
+.slogan .ci span{display:inline-block; color:#fff; font-weight:700; vertical-align:middle; font-size:23px; margin-top:10px; padding-left:20px; white-space: nowrap; position: relative; line-height: 1;}
+.slogan .ci span::before{content:""; display:block; float:left; background:#fff; width:1px; height:10px; position: absolute; top:3px; left:10px;} 
+
+.intro-btn{position: relative; margin:0 auto; width:330px; }
+
+.intro-btn > img{position: absolute; width:60vw; top:-24vh; right:0;}
+.intro-btn-item{background:#fff url(/lina/resources/img/common/intro_01.jpg) no-repeat right 30px top 59% / 47px; width:100%; padding:0; border-radius:20px; position: relative; z-index:1; text-align: left;}
+.intro-btn-item + .intro-btn-item{margin-top:10px; background:#fff url(/lina/resources/img/common/intro_02.jpg) no-repeat right 30px top 59% / 58px; }
+.intro-btn-item + .intro-btn-item button{padding-top:38px}
+.intro-btn-item button{text-align:left; width:100%; padding:20px 30px 16px; min-height:116px;}
+.intro-btn-item button strong{display:block; font-size:18px; color:#67b1ff; line-height:1.2; margin-bottom:5px}
+.intro-btn-item button strong b{font-weight:700;}
+.intro-btn-item button span{display:block; font-size:13px; color:#8d8d8d; width:calc(100% - 60px)}
+
+.page-main-hidden .page-intro{transform:translate(0,0); transition: transform .3s ease-out;}
+.page-main-visible .page-intro{transform:translate(-100vw,0); transition: transform .3s ease-out;}
+
+.vod-wrap{display:none}
+.vod-wrap .btn-close{position:absolute; width:22px; height:22px; top:30px; right:30px; background:url(/lina/resources/img/common/btn-close.png) no-repeat 0 0/ cover; min-height:0; padding:0;}
+.vod-wrap{width:100%; padding:0 30px 30px;}
+.vod-wrap video{width:100%;}
+
+.guide .coachmark{display:block;}
+.coachmark{display:none; position: fixed; width:100%; height: 100%; z-index:99; top:0; left:0; background:rgba(0,0,0,0.65); }
+.coachmark button{width:39px; height:39px; position:absolute; top:30px; left:30px;}
+.coachmark button img{width:100%}
+.coachmark > div{position: absolute; color:#fff; text-align: center; width:100%;}
+.coachmark .n1{font-size:18px; line-height:1.6; bottom:45vh}
+.coachmark .n1 img{width:80%; display: inline-block; margin:20px 0 0}
+
+.coachmark .n2{bottom:30px; width: calc(100% - 30px);position: absolute; left: 15px;border-radius: 20px; z-index: 5; overflow: hidden; border:1px dashed #0defdc; height:194px; padding-top:40px; font-size:18px; line-height:1.6;}
+.coachmark .n2 img{width:31px; display: inline-block; margin:20px 0 0}
 @keyframes textline {
 	0%{width:0%}
 	100%{width:100%}
 }
 
+@media screen and (orientation: landscape) {
+	body{overflow: hidden; height:100%}
+	body::after{content:"기로모드를 지원하지 않습니다.";display:block; position:fixed; top:0; left:0; width:100%; height:100%; z-index:2000;  background:rgba(0,0,0,0.7); text-align: center; color:#fff; font-size:30px;line-height: 100vh;}
+}
