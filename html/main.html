@@ -8,7 +8,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta name="mobile-web-app-capable" content="yes">
 
-        <title>template</title>
+        <title>라이나생명 | 청양확인서</title>
 
         <link rel="stylesheet" href="/lina/resources/css/ui.base.css">
         <link rel="stylesheet" type="text/css" href="/lina/resources/css/lib/slick.css"/>
@@ -27,9 +27,9 @@
                     </h1>
                     <nav class="header-nav">
                         <ul>
-                            <li><button type="button" n="0"><span>보험료</span></button></li>
-                            <li><button type="button" n="1"><span>보장금액</span></button></li>
-                            <li><button type="button" n="2"><span>보장시작일</span></button></li>
+                            <li><button type="button" n="0"><span>보장금액</span></button></li>
+                            <li><button type="button" n="1"><span>보장시작일</span></button></li>
+                            <li><button type="button" n="2"><span>보험료</span></button></li>
                             <li><button type="button" n="3"><span>계약정보</span></button></li>
                             <li><button type="button" n="4"><span>고객케어</span></button></li>
                         </ul>
@@ -41,42 +41,8 @@
 
             <main class="base-main">
                 <div class="slidepage">
-                    <section class="slidepage-item type-a" page="1">
-                        <div class="slidepage-content-wrap">
-                            <div class="page-tit">
-                                <span>무)THE든든한간병비치매보험(해지환급금미지급형)</span>
-                                <h1>내 보험료는 <br>얼마?</h1>
-                            </div>
-                            <div class="page-img">
-                                <img 
-                                src="/lina/resources/img/common/page-a-img@2x.png"  
-                                srcset="/lina/resources/img/common/page-a-img.png,
-                                        /lina/resources/img/common/page-a-img@2x.png 2x,
-                                        /lina/resources/img/common/page-a-img@3x.png 3x"
-                                alt="">
-                            </div>
-                            <div class="page-box">
-                                <button type="button" class="btn-content" n="1">
-                                    <dl class="group-dl">
-                                        <dt>라인하님의 월보험료</dt>
-                                        <dd class="type-sum">
-                                            <strong>56,380</strong><span>원</span>
-                                        </dd>
-                                        <dd class="type-txt">
-                                            <strong>
-                                                <b class="line">
-                                                    <span>35년 만기, 납입기간은 30년</span>
-                                                </b>입니다.
-                                            </strong>
-                                            <br>
-                                            <span>납입기간동안 보험료는 변동되지 않는 비갱신형 보험입니다.</span>
-                                        </dd>
-                                    </dl>
-                                </button>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="slidepage-item type-b" page="2">
+                    <!--보장금액-->
+                    <section class="slidepage-item type-b" page="1">
                         <div class="slidepage-content-wrap">
                             <div class="page-tit">
                                 <h1>보장금액 <br>한눈에 보기</h1>
@@ -117,7 +83,9 @@
                             </div>
                         </div>
                     </section>
-                    <section class="slidepage-item type-c" page="3">
+
+                    <!--보장시작일-->
+                    <section class="slidepage-item type-c" page="2">
                         <div class="slidepage-content-wrap">
                             <div class="page-tit">
                                 <h1>언제부터 <br>보장될까?</h1>
@@ -152,6 +120,53 @@
                             </div>
                         </div>
                     </section>
+
+                    <!--보험료-->
+                    <section class="slidepage-item type-a" page="3">
+                        <div class="slidepage-content-wrap">
+                            <div class="page-tit">
+                                <span>무)THE든든한간병비치매보험(해지환급금미지급형)</span>
+                                <h1>내 보험료는 <br>얼마?</h1>
+                            </div>
+                            <div class="page-img">
+                                <img 
+                                src="/lina/resources/img/common/page-a-img@2x.png"  
+                                srcset="/lina/resources/img/common/page-a-img.png,
+                                        /lina/resources/img/common/page-a-img@2x.png 2x,
+                                        /lina/resources/img/common/page-a-img@3x.png 3x"
+                                alt="">
+                            </div>
+                            <div class="page-img2">
+                                <img 
+                                src="/lina/resources/img/common/page-a-img@2x.png"  
+                                srcset="/lina/resources/img/common/page-a-img2.png,
+                                        /lina/resources/img/common/page-a-img2@2x.png 2x,
+                                        /lina/resources/img/common/page-a-img2@3x.png 3x"
+                                alt="">
+                            </div>
+                            <div class="page-box">
+                                <button type="button" class="btn-content" n="1">
+                                    <dl class="group-dl">
+                                        <dt>라인하님의 월보험료</dt>
+                                        <dd class="type-sum">
+                                            <strong>56,380</strong><span>원</span>
+                                        </dd>
+                                        <dd class="type-txt">
+                                            <strong>
+                                                <b class="line">
+                                                    <span>35년 만기, 납입기간은 30년</span>
+                                                </b>입니다.
+                                            </strong>
+                                            <br>
+                                            <span>납입기간동안 보험료는 변동되지 않는 비갱신형 보험입니다.</span>
+                                        </dd>
+                                    </dl>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!--계약정보-->
                     <section class="slidepage-item type-d" page="4">
                         <div class="slidepage-content-wrap">
                             <div class="page-tit">
@@ -170,13 +185,18 @@
                                     <dl class="group-dl">
                                         <dt>라인하님,</dt>
                                         <dd>
-                                            가입하신 보험계약정보를 <br>확인해주세요.
+                                            <div class="btn-arrow">
+                                                콕 집어 알려주는  <br>
+                                                보험 계약관련 정보
+                                            </div>
                                         </dd>
                                     </dl>
                                 </button>
                             </div>
                         </div>
                     </section>
+
+                    <!--고객케어-->
                     <section class="slidepage-item type-e" page="5">
                         <div class="slidepage-content-wrap">
                             <div class="page-tit">
@@ -200,31 +220,416 @@
                             </div>
                             <div class="page-box">
                                 <button type="button" class="btn-content" n="5">
-                                    <dl class="group-dl">
-                                        <dt>라인하님,</dt>
-                                        <dd>
-                                            계약일에서 <br>
-                                            <b class="line"><span>1년이 지난 다음날</span></b>부터<br>
-                                            입니다
-                                        </dd>
-                                    </dl>
+                                    <div class="btn-arrow-modal">
+                                        <span>라이나 가족이 되신 고객님께 드리는 <strong>다양한 정보와 혜택!</strong></span>
+                                        <span class="ico"></span>
+                                    </div>
                                 </button>
                             </div>
                         </div>
                     </section>
                 </div>
 
-                <article class="page-content type-a" page="1">
-                    <button type="button" class="page-close" aria-label="보험료 상세보기 닫기">
-                        <img src="/lina/resources/img/common/rectangle-1010.svg" alt="">
+
+<!----------------------------------- 상세내용 ---------------------------------------->
+                <!-- 보장금액 -->
+                <article class="page-content type-b" page="2">
+                    <button type="button" class="page-close" aria-label="보장금액 상세보기 닫기">
+                        <img src="/lina/resources/img/common/ico-back.svg" alt="">
                     </button>
                     
                     <section class="page-content-wrap">
-                        <h2>제목</h2>
-                        <p>내용...</p>
+                        <h2>치매 진단시 진단자금은 물론 중증치매 (CDR3) 진단시 <strong class="hue-m">생활간병비</strong>를 평생 지급합니다.</h2>
+                        <p class="txt-noti">※ 기타 상세한 내용은 해당 상품약관 및 증권을 참조하시기 바랍니다. </p>
+
+                        <ul class="ui-acco" id="exeAcco1">
+                            <li class="ui-acco-wrap">
+                                <div class="ui-acco-tit">
+                                    <button type="button" class="ui-acco-btn">
+                                        <span class="hue-m">01</span><span>주계약</span>
+                                    </button>
+                                </div>
+                                <div class="ui-acco-pnl">
+                                    <div class="ui-acco-pnl-wrap">
+                                        <div class="full-img">
+                                            <div class="full-img-txt">(주계약)무배당THE든든한간병비치매보험<br>(해지환급금미지급형)</div>
+                                            <img src="/lina/resources/img/common/acco-img1.png" alt="">
+                                        </div>
+
+                                        <dl class="dl-box">
+                                            <dt>피보험자가 보험기간중,</dt>
+                                            <dd>치매 (CDR 1점 이상)로 진단 시(최초1회) <b class="hue-m"><strong>500</strong>만원</b></dd>
+                                            <dd>중증치매 (CDR 3점 이상)로 진단되고 매년 중증치매 진단일에 생존시 매월 <b class="hue-m"><strong>500</strong>만원</b><br>
+                                                평생지급 (진단 직후 최초 36회 보증지급)
+                                            </dd>
+                                        </dl>
+
+                                        <dl class="dl-tit">
+                                            <div>
+                                                <dt><span>CDR척도란,</span></dt>
+                                                <dd>치매관련 전문의가 실시하는 전반적인 인지기능 및 사회기능 정도를 측정하는 검사를 말합니다.</dd>
+                                            </div>
+                                            <div>
+                                                <dt><span>치매 진단은,</span></dt>
+                                                <dd>임상치매평가(CDR)척도와 뇌 CT, MRI 검사 등을 기초로 판정합니다.</dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-acco-wrap">
+                                <div class="ui-acco-tit">
+                                    <button type="button" class="ui-acco-btn">
+                                        <span class="hue-m">02</span><span>특약)중등도치매보장</span>
+                                    </button>
+                                </div>
+                                <div class="ui-acco-pnl">
+                                    <div class="ui-acco-pnl-wrap">
+                                        <dl class="dl-box">
+                                            <dt>피보험자가 보험기간중,</dt>
+                                            <dd>중등도이상치매(CDR 2점이상)로 진단 시<br>
+                                            (최초1회) <b class="hue-m"><strong>1,000</strong>만원</b></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-acco-wrap">
+                                <div class="ui-acco-tit">
+                                    <button type="button" class="ui-acco-btn">
+                                        <span class="hue-m">03</span><span>(특약)중증치매보장</span>
+                                    </button>
+                                </div>
+                                <div class="ui-acco-pnl">
+                                    <div class="ui-acco-pnl-wrap">
+                                        <dl class="dl-box">
+                                            <dt>피보험자가 보험기간중,</dt>
+                                            <dd>중등도이상치매(CDR 3점이상)로 진단 시<br>
+                                            (최초1회) <b class="hue-m"><strong>5000</strong>만원</b></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-acco-wrap">
+                                <div class="ui-acco-tit">
+                                    <button type="button" class="ui-acco-btn">
+                                        <span class="hue-m">04</span><span>특약)중증치매간병비보장</span>
+                                    </button>
+                                </div>
+                                <div class="ui-acco-pnl">
+                                    <div class="ui-acco-pnl-wrap">
+                                        <dl class="dl-box">
+                                            <dt>피보험자가 보험기간중,</dt>
+                                            <dd>장기요양수급자(인지지원등급제외)로 재가급여를 이용하였을 때 월 1회 한도로 지급 <br>
+                                            <b class="hue-m"><strong>매월 10만원</strong></b>(재가급여 이용 1회당 지급)<br>
+                                        </dl>
+                                        <dl class="dl-tit">
+                                            <div>
+                                                <dt><span>재가급여란,</span></dt>
+                                                <dd>노인장기요양등급수급자가 방문요양, 방문간호, 방문목욕, 주/야간보호,  단기보호, 복지용구를 받는 요양서비스를 말합니다.</dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-acco-wrap">
+                                <div class="ui-acco-tit">
+                                    <button type="button" class="ui-acco-btn">
+                                        <span class="hue-m">05</span><span>보장제외 및 납입면제</span>
+                                    </button>
+                                </div>
+                                <div class="ui-acco-pnl">
+                                    <div class="ui-acco-pnl-wrap">
+                                        <dl class="dl-tit">
+                                            <div>
+                                                <dt><span> 보장제외</span></dt>
+                                                <dd>정신질환, 알코올중독, 약물로 인한 인지기능 장애 등은 보장하지 않습니다.</dd>
+                                            </div>
+                                            <div>
+                                                <dt><span>납입면제</span></dt>
+                                                <dd>피보험자가 보험료를 납입하고 있는 기간 중 중증치매진단을 받을 경우, 차 회 이후부터는 보험료를 더 이상 납입하지 않고 만기까지 보장받습니다.</dd>
+                                            </div>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="ui-acco-wrap">
+                                <div class="ui-acco-tit">
+                                    <button type="button" class="ui-acco-btn">
+                                        <span class="hue-m">06</span><span>해지환금금 미지급형 안내</span>
+                                    </button>
+                                </div>
+                                <div class="ui-acco-pnl">
+                                    <div class="ui-acco-pnl-wrap">
+                                        <p>가입하신 보험은 <b class="hue-m"><strong>해지환급금 미지급형</strong></b>으로 기본형보다 낮은 보험료로  가입할 수 있는 대신, 보험료 납입기간 중 계약이 중도 해지될 경우 해지환급금이 지급되지 않습니다.</p>
+                                        <p>다만, 보험료 납입기간이 완료된 이후 계약이 해지되는 경우에는 기본형의 해지환급금과 동일한 금액을 지급합니다.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+
                     </section>
                     
                 </article>
+
+                <!-- 보장시작일 -->
+                <article class="page-content type-c" page="3">
+                    <button type="button" class="page-close" aria-label="보장시작일 상세보기 닫기">
+                        <img src="/lina/resources/img/common/ico-back.svg" alt="">
+                    </button>
+                    
+                    <section class="page-content-wrap">
+                        <dl class="group-dl">
+                            <dt>치매에 대한 보장시작일은</dt>
+                            <dd>
+                                계약일에서 <br>
+                                <b class="line"><span>1년이 지난 다음날</span></b>부터<br>
+                                입니다
+                            </dd>
+                        </dl>
+
+                        <div class="list-date">
+                            <ul>
+                                <li class="point">
+                                    <span>2020.07.23</span>
+                                    <div>
+                                        <strong>보험계약일</strong>
+                                    </div>
+                                </li>
+                                <li class="start">
+                                    <span>2021.07.24</span>
+                                    <div>
+                                        <strong>보장시작일</strong>
+                                        <em>계약일에서 1년이 지난 다음날</em>
+                                        <p>보험기간 중 발생한 재해로 인한 뇌의 손상으로 치매가 발생한 경우에는 계약일부터 보장합니다.<br>
+                                        집에서집중간병특약에 대한 보장시작일은 가입일부터 입니다.</p>
+                                    </div>
+                                </li>
+                                <li class="term">
+                                    <div>
+                                        <strong>감액/면책기간</strong>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>2020.07.23</span>
+                                    <div>
+                                        <strong>특약 보험료 납입 완료일</strong>
+                                        <p>중증치매보장 특약 보험료 납입 기간은 <br><strong class="hue-m">30년</strong> 입니다.</p>
+                                    </div>
+                                </li>
+                                <li class="point">
+                                    <span>2020.07.23</span>
+                                    <div>
+                                        <strong>주계약 보험료 납입 완료일</strong>
+                                        <p>주계약 보험료 납입 기간은 <br><strong class="hue-m">30년</strong> 입니다.</p>
+                                    </div>
+                                </li>
+                                <li class="point">
+                                    <span>2020.07.23</span>
+                                    <div>
+                                        <strong>특약 만기일</strong>
+                                        <p>중증치매보장 특약은 <br><strong class="hue-m">30년</strong> 입니다.</p>
+                                        <div class="tip">계약관련 유의사항</div>
+                                    </div>
+                                </li>
+                                <li class="point">
+                                    <span>2055.07.23</span>
+                                    <div>
+                                        <strong>주계약 만기일</strong>
+                                        <p><strong class="hue-m">30년</strong> 만기 상품 입니다.</p>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </section>
+                    
+                </article>
+
+                <!-- 보험료 -->
+                <article class="page-content type-a" page="1">
+                    <button type="button" class="page-close" aria-label="보험료 상세보기 닫기">
+                        <img src="/lina/resources/img/common/ico-back.svg" alt="">
+                    </button>
+                    
+                    <section class="page-content-wrap">
+                        <p>무)THE든든한간병비치매보험(해지환급금미지급형)</p>
+                        <dl class="group-dl">
+                            <dt>라인하님의  합계 월 보험료</dt>
+                            <dd class="type-sum">
+                                <strong>56,380</strong><span>원 이며, </span>
+                            </dd>
+                            <dd class="type-txt">
+                                납입기간 동안 보험료가 변동되지 않는 
+                                <b class="line"><span>비갱신형 보험</span>이며</b> 만기 시 납입보험료 
+                                환급하지 않는 <b class="line"><span>순수보장형 상품</span>입니다</b>
+                            </dd>
+                        </dl>
+
+                        <h3>라인하님은 주계약에 <strong class="hue-m">특약 4개</strong>를 가입하셨습니다.  </h3>
+                        <ul class="list-insure">
+                            <li>
+                                <em class="hue-m">#주계약</em>
+                                <span>35년 만기/30년 납입</span>
+                                <strong>
+                                    무배당THE든든한간병비치매보험<br>
+                                    (해지환급금미지급형)
+                                </strong>
+                                <div class="type-sum2">
+                                    <span>가입금액</span><strong>500</strong><span>만원</span>
+                                </div>
+                                <div class="type-sum">
+                                    <strong>26,600</strong><span>원</span>
+                                </div>
+                            </li>
+                            <li>
+                                <em class="hue-m">#주계약</em>
+                                <span>35년 만기/30년 납입</span>
+                                <strong>
+                                    무배당THE든든한간병비치매보험<br>
+                                    (해지환급금미지급형)
+                                </strong>
+                                <div class="type-sum2">
+                                    <span>가입금액</span><strong>500</strong><span>만원</span>
+                                </div>
+                                <div class="type-sum">
+                                    <strong>26,600</strong><span>원</span>
+                                </div>
+                            </li>
+                            <li>
+                                <em class="hue-m">#주계약</em>
+                                <span>35년 만기/30년 납입</span>
+                                <strong>
+                                    무배당THE든든한간병비치매보험<br>
+                                    (해지환급금미지급형)
+                                </strong>
+                                <div class="type-sum2">
+                                    <span>가입금액</span><strong>500</strong><span>만원</span>
+                                </div>
+                                <div class="type-sum">
+                                    <strong>26,600</strong><span>원</span>
+                                </div>
+                            </li>
+                            <li>
+                                <em class="hue-m">#주계약</em>
+                                <span>35년 만기/30년 납입</span>
+                                <strong>
+                                    무배당THE든든한간병비치매보험<br>
+                                    (해지환급금미지급형)
+                                </strong>
+                                <div class="type-sum2">
+                                    <span>가입금액</span><strong>500</strong><span>만원</span>
+                                </div>
+                                <div class="type-sum">
+                                    <strong>26,600</strong><span>원</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </article>
+
+                <!-- 계약정보 -->
+                <article class="page-content type-d" page="4">
+                    <button type="button" class="page-close" aria-label="계약정보 상세보기 닫기">
+                        <img src="/lina/resources/img/common/ico-back-dark.svg" alt="">
+                    </button>
+                    
+                    <section class="page-content-wrap">
+                        <dl class="group-dl">
+                            <dt>라인하님</dt>
+                            <dd>
+                                <div class="btn-arrow">
+                                    콕 집어 <br>알려주는 보험 <br>계약관련 정보
+                                </div>
+                            </dd>
+                        </dl>
+                        <div class="page-img">
+                            <img 
+                            src="/lina/resources/img/common/page-d-img@2x.png"  
+                            srcset="/lina/resources/img/common/page-d-img.png,
+                                    /lina/resources/img/common/page-d-img@2x.png 2x,
+                                    /lina/resources/img/common/page-d-img@3x.png 3x"
+                            alt="">
+                        </div>
+
+                        <div class="dl-table-bg">
+                            <dl class="dl-table">
+                                <div class="dl-tr">
+                                    <dt>계약자</dt>
+                                    <dd>라*하</dd>
+                                </div>
+                                <div class="dl-tr">
+                                    <dt>피보험자</dt>
+                                    <dd>나*나</dd>
+                                </div>
+                                <div class="dl-tr">
+                                    <dt>납입자</dt>
+                                    <dd>이*아</dd>
+                                </div>
+
+                                <div class="dl-tr div-line">
+                                    <dt>납부방법</dt>
+                                    <dd>
+                                    카드결제<br>
+                                    BC카드(1234- 56** - **** -  9123)<br>
+                                    결제 일자: 15일</dd>
+                                </div>
+                                <div class="dl-tr div-line">
+                                    <dt>계약자정보</dt>
+                                    <dd>
+                                    연락처 : 010- **** -5678<br>
+                                    이메일 : ej***@gmail.com<br>
+                                    <span class="in-2">주소 : 서울시 종로구 삼봉로 **********************</span></dd>
+                                </div>
+                            </dl>
+                            <div class="div-line">
+                                <span class="txt">납부방법 및 계약자 정보 변경이 필요할 경우 라이나생명 공식 앱에서 가능합니다</span>
+                                <button type="button" class="btn-round"><span>변경</span></button>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- 고객케어 -->
+                <article class="page-content type-e" page="5">
+                    <section class="page-content-wrap">
+                        <button type="button" class="page-close" aria-label="고객케어 상세보기 닫기">
+                            <span class="ico"></span>
+                        </button>
+                        
+                        <h2>라이나 가족이 되신 고객님께 드리는 <br>
+                        <strong>다양한 정보와 혜택을 체험해 보세요!</strong></h2>
+                        
+                        <dl class="dl-benefit">
+                            <div class="n1">
+                                <dt>
+                                    <span>스마일케어<br>로고</span>
+                                </dt>
+                                <dd>
+                                    <strong>스마일케어 구독 ME!</strong>
+                                    <span>치아케어 맞춤 알림 서비스 구독하세요.</span>
+                                    <button type="button" class="btn-round ico-arrow"><span>수마일케어 구독하기</span></button>
+                                </dd>
+                            </div>
+                            <div class="n2">
+                                <dt>
+                                    <img src="/lina/resources/img/common/bi-jsg@2x.png" 
+                                    srcset="/lina/resources/img/common/bi-jsg.png,
+                                        /lina/resources/img/common/bi-jsg@2x.png 2x,
+                                        /lina/resources/img/common/bi-jsg@3x.png 3x"
+                                    alt="전성기">
+                                </dt>
+                                <dd>
+                                    <strong><b class="line"><span>건강한 삶과 나눔의 행복!</span></b></strong>
+                                    <span>나눌 줄 아는 ‘당신’을 응원합니다. <br>다양한 사회공헌 활동 및 행사 정보가 가득</span>
+                                    <button type="button" class="btn-round ico-arrow"><span>전성기 바로가기</span></button>
+                                </dd>
+                            </div>
+                        </dl>
+                    </section>
+                    
+                </article>
+
             </main>
         </div>
 
@@ -261,17 +666,25 @@
                     });
                     
                     $slidepage
-                    .on('swipe', function(event, slick, direction){
-                        console.log(direction);
-                    })
-                    .on('edge', function(event, slick, direction){
-                        console.log('edge was hit');
-                    })
+                    // .on('swipe', function(event, slick, direction){
+                    //     console.log(direction);
+                    // })
+                    // .on('edge', function(event, slick, direction){
+                    //     console.log('edge was hit');
+                    // })
                     .on('beforeChange', function(event, slick, currentSlide, nextSlide){
                         $('html').attr('page', nextSlide);
                         $('.header-nav li').removeClass('selected');
                         $('.header-nav li').eq(nextSlide).addClass('selected');
                         navBar(nextSlide);
+                        //$('.btn-content').prop('disabled', true);
+                        // setTimeout(function(){
+                        //     console.log(1);
+                        //     $('.btn-content').prop('disabled', false);
+                        // },1500);
+                        // $('.page-box').on('transitionend', function(){
+                           
+                        // })
                     });
 
                     function navBar(v){
@@ -307,17 +720,80 @@
                         var n = $(this).attr('n');
 
                         $body.addClass('ready');
+                        $('.line').removeClass('on');
+                        $('.page-content').removeClass('on');
+                        $('.page-content[page="'+ n +'"]').addClass('on');
+                       
                         setTimeout(function(){
                             $body.addClass('detail');
+                            lineCheck();
                         },0);
                     });
 
                     $('.page-close').on('click', function(){
                         $body.removeClass('detail');
+                        $('.page-content.on').find('.line').removeClass('on');
+                        $('.page-content').removeClass('on');
                         setTimeout(function(){
                             $body.removeClass('ready');
                         },200);
                     });
+
+                    $plugins.uiAccordion({ 
+                        id: 'exeAcco1', 
+                        current: null, 
+                        autoclose: true, 
+                        callback: function(v){console.log(v)} 
+                    });
+                    $(win).off('scroll.win').on('scroll.win', lineCheck);
+                   
+                    function lineCheck(){
+                        var len = $('.page-content.on').find('.line').length;
+                        var v = $(win).scrollTop() + $(win).outerHeight();
+
+                        for (var i = 0; i < len; i++) {
+                            if (v > $('.page-content.on').find('.line').eq(i).position().top) {
+                                $('.page-content.on').find('.line').eq(i).addClass('on');
+                            }
+                        }
+                    }
+
+
+                    $('.btn-talk').on('click.audio', function(){
+                        var v = $('html').attr('page');
+                        setAudio(v)
+                        
+                    });
+                    function setAudio(v){
+                        var v = Number(v) + 1;
+                        var audioEle = document.createElement('audio');
+                        var soundUrl = '/lina/resources/data/LA-0'+ v +'.mp3';
+                        var classN = 'audio-la0' + v;
+                        audioEle.setAttribute('class', classN);
+                        audioEle.setAttribute('src', soundUrl);
+                        audioEle.setAttribute('autoplay', 'autoplay');
+                        audioEle.setAttribute('type', 'audio/mpeg');
+                        if (!$('.audio-la0' + v).length) {
+                            $("body").append(audioEle);
+                        }
+
+                        var clickAudio = document.getElementsByClassName('audio-la0' + v)[0];
+                        if (!clickAudio.ended) {
+                            clickAudio.currentTime = 0;
+                        }
+                        var stopAudio;
+                        if (!!$('body').data('audio')) {
+                            var a = $('body').data('audio');
+                            console.log(a);
+                            stopAudio = document.getElementsByClassName(a)[0];
+                            stopAudio.pause();
+                            stopAudio.currentTime = 0;
+                        }
+
+                        clickAudio.play();
+                        $('body').data('audio', classN);
+                        
+                    }
 
                 });
             })(jQuery, window, document);
