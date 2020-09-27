@@ -402,5 +402,5 @@ html[page="4"] .detail .base-wrap::after{content:""; display:block; width:100%; 
 
 @media screen and (orientation: landscape) {
 	body{overflow: hidden; height:100%}
-	body::after{content:"기로모드를 지원하지 않습니다.";display:block; position:fixed; top:0; left:0; width:100%; height:100%; z-index:2000;  background:rgba(0,0,0,0.7); text-align: center; color:#fff; font-size:30px;line-height: 100vh;}
+	body::after{content:"가로모드를 지원하지 않습니다.";display:block; position:fixed; top:0; left:0; width:100%; height:100%; z-index:2000;  background:rgba(0,0,0,0.7); text-align: center; color:#fff; font-size:30px;line-height: 100vh;}
 }
