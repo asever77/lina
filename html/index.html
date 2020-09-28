@@ -750,8 +750,14 @@
                         //set
                         navBar(0);
                         $slidepage.find('.slidepage-item').css('min-height', $(win).outerHeight());
+                        var timer
                         $(win).on('resize', function(){
-                            $slidepage.find('.slidepage-item').css('min-height', $(win).outerHeight());
+                            clearTimeout(timer);
+                            timer = setTimeout(function(){
+                                $slidepage.find('.base-wrap .slick-track').css('min-height', $(win).outerHeight());
+                                $slidepage.find('.slidepage-item').css('min-height', $(win).outerHeight());
+                            }, 100);
+                           
                         });
                         
                         $slidepage
