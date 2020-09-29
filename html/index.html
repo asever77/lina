@@ -657,7 +657,7 @@
         <script src="/lina/resources/js/lib/slick.min.js"></script>
         <script src="/lina/resources/js/ui.global.js"></script>
         <script>
-           ;(function($, win, doc, undefined) {
+            ;(function($, win, doc, undefined) {
 
                 'use strict';
 
@@ -838,7 +838,7 @@
                             callback: function(v){console.log(v)} 
                         });
 
-                        $(win).off('scroll.win').on('scroll.win', lineCheck);
+                        $(win).off('scroll.win').on('scroll.win', lineCheck); 
                     }
 
                     $plugins.audio = {}
@@ -878,37 +878,37 @@
                         var cloneBox = null;
                         
                         
-                            switch(v) {
-                                case '0' :
-                                    cloneBox = $('.slidepage-item.type-b .page-box').clone();
-                                    $('body').append('<div class="clone-box type-b"></div>');
-                                break;
-                                case '1' :
-                                    cloneBox = $('.slidepage-item.type-c .page-box').clone();
-                                    $('body').append('<div class="clone-box type-c"></div>');
-                                break;
-                                case '2' :
-                                    cloneBox = $('.slidepage-item.type-a .page-box').clone();
-                                    $('body').append('<div class="clone-box type-a"></div>');
-                                break;
-                                case '3' :
-                                    cloneBox = $('.slidepage-item.type-d .page-box').clone();
-                                    $('body').append('<div class="clone-box type-d"></div>');
-                                break;
-                                case '4' :
-                                    cloneBox = $('.slidepage-item.type-e .page-box').clone();
-                                    $('body').append('<div class="clone-box type-e"></div>');
-                                break;
+                        switch(v) {
+                            case '0' :
+                                cloneBox = $('.slidepage-item.type-b .page-box').clone();
+                                $('body').append('<div class="clone-box type-b"></div>');
+                            break;
+                            case '1' :
+                                cloneBox = $('.slidepage-item.type-c .page-box').clone();
+                                $('body').append('<div class="clone-box type-c"></div>');
+                            break;
+                            case '2' :
+                                cloneBox = $('.slidepage-item.type-a .page-box').clone();
+                                $('body').append('<div class="clone-box type-a"></div>');
+                            break;
+                            case '3' :
+                                cloneBox = $('.slidepage-item.type-d .page-box').clone();
+                                $('body').append('<div class="clone-box type-d"></div>');
+                            break;
+                            case '4' :
+                                cloneBox = $('.slidepage-item.type-e .page-box').clone();
+                                $('body').append('<div class="clone-box type-e"></div>');
+                            break;
 
-                                default: cloneBox = null;
-                                break;
-                            
-                            if(cloneBox !== null){
-                            $('.clone-box').append(cloneBox);
-                            }
-cloneBox = '';
+                            default:
+                                cloneBox = null;
+                            break;
                         }
-
+                        if (cloneBox !== null) {
+                            $('.clone-box').append(cloneBox);
+                        }
+                        
+                        cloneBox = null;
                         
                         $(doc).find('.btn-content').off('click.detail').on('click.detail', function(){
                             var $wrap = $(this).closest('.content-wrap');
@@ -973,17 +973,15 @@ cloneBox = '';
                     }
 
                     function lineCheck(){
-                            var len = $('.page-content.on').find('.line').length;
-                            var v = $(win).scrollTop() + $(win).outerHeight();
+                        var len = $('.page-content.on').find('.line').length;
+                        var v = $(win).scrollTop() + $(win).outerHeight();
 
-                            for (var i = 0; i < len; i++) {
-                                if (v > $('.page-content.on').find('.line').eq(i).position().top) {
-                                    $('.page-content.on').find('.line').eq(i).addClass('on');
-                                }
+                        for (var i = 0; i < len; i++) {
+                            if (v > $('.page-content.on').find('.line').eq(i).position().top) {
+                                $('.page-content.on').find('.line').eq(i).addClass('on');
                             }
                         }
-        
-
+                    }
 
 
                 });
