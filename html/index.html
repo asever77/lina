@@ -19,7 +19,11 @@
 
         <link rel="stylesheet" href="/lina/resources/css/ui.base.css">
         <link rel="stylesheet" type="text/css" href="/lina/resources/css/lib/slick.css"/>
-
+        <style>
+            body.detail.ing-audio::after{display:none}
+            .clone-box .page-box{z-index:100;}
+            body.detail .clone-box .page-box{display:none;}
+        </style>
     </head>
     <body >
         <div class="base-wrap" >
@@ -653,7 +657,7 @@
         <script src="/lina/resources/js/lib/slick.min.js"></script>
         <script src="/lina/resources/js/ui.global.js"></script>
         <script>
-            ;(function($, win, doc, undefined) {
+           ;(function($, win, doc, undefined) {
 
                 'use strict';
 
@@ -796,14 +800,14 @@
                                 ps: 'center' 
                             });
                         }
-
-                        $('.header-nav button').on('click', function(){
+                        
+                        $(doc).find('.header-nav button').off('click.nav').on('click.nav', function(){
                             var n = $(this).attr('n');
 
                             $slidepage.slick('slickGoTo', n);
-                        })
+                        });
 
-                        $('.btn-content').on('click', function(){
+                        $(doc).find('.btn-content').off('click.detail').on('click.detail', function(){
                             var $wrap = $(this).closest('.content-wrap');
                             var n = $(this).attr('n');
 
@@ -811,23 +815,22 @@
                             $('.line').removeClass('on');
                             $('.page-content').removeClass('on');
                             $('.page-content[page="'+ n +'"]').addClass('on');
-                            $plugins.audio.stop();
                             setTimeout(function(){
                                 $body.addClass('detail');
                                 lineCheck();
                             },0);
                         });
 
-                        $('.page-close').on('click', function(){
+                        $(doc).find('.page-close').off('click.close').on('click.close', function(){
                             $body.removeClass('detail');
+                            $('.btn-content').find('.line').addClass('on');
                             $('.page-content.on').find('.line').removeClass('on');
                             $('.page-content').removeClass('on');
-                            $plugins.audio.stop();
                             setTimeout(function(){
                                 $body.removeClass('ready');
                             },200);
                         });
-
+                        
                         $plugins.uiAccordion({ 
                             id: 'exeAcco1', 
                             current: null, 
@@ -863,17 +866,18 @@
                             stopAudio.pause();
                             stopAudio.currentTime = 0;
                             $btn.removeClass('off');
+                            $('.clone-box').remove();
                             $body.removeClass('ing-audio');
                             $body.data('audioplay', 'false');
                         } 
                     }
-                    $plugins.audio.play = function(n){
+                    $plugins.audio.play = function(v){
                         //set
-                        var n;
+                        var n = v;
                         if (n === null) {
                             n = 1
                         } else {
-                            n = $('body.detail').length ? Number(n) + 3 : '2-0' + (Number(n) + 1);
+                            n = Number(n) + 2;
                         }
 
                         var audioEle = document.createElement('audio');
@@ -881,6 +885,53 @@
                         var classN = 'audio-la0' + n;
                         var $body = $("body");
                         var $btn = $('.btn-talk');
+
+                        var cloneBox;
+                        console.log(v, !$('body.detail').length);
+                        if (!$('body.detail').length) {
+                            switch(v) {
+                                case '0' :
+                                    cloneBox = $('.slidepage-item.type-b .page-box').clone();
+                                    $('body').append('<div class="clone-box type-b"></div>');
+                                break;
+                                case '1' :
+                                    cloneBox = $('.slidepage-item.type-c .page-box').clone();
+                                    $('body').append('<div class="clone-box type-c"></div>');
+                                break;
+                                case '2' :
+                                    cloneBox = $('.slidepage-item.type-a .page-box').clone();
+                                    $('body').append('<div class="clone-box type-a"></div>');
+                                break;
+                                case '3' :
+                                    cloneBox = $('.slidepage-item.type-d .page-box').clone();
+                                    $('body').append('<div class="clone-box type-d"></div>');
+                                break;
+                                case '4' :
+                                    cloneBox = $('.slidepage-item.type-e .page-box').clone();
+                                    $('body').append('<div class="clone-box type-e"></div>');
+                                break;
+
+                                default:
+                                break;
+                            }
+                            $('.clone-box').append(cloneBox);
+                            cloneBox = '';
+                        }
+
+                        
+                        $(doc).find('.btn-content').off('click.detail').on('click.detail', function(){
+                            var $wrap = $(this).closest('.content-wrap');
+                            var n = $(this).attr('n');
+
+                            $body.addClass('ready');
+                            $('.line').removeClass('on');
+                            $('.page-content').removeClass('on');
+                            $('.page-content[page="'+ n +'"]').addClass('on');
+                            setTimeout(function(){
+                                $body.addClass('detail');
+                                lineCheck();
+                            },0);
+                        });
 
                         audioEle.setAttribute('class', classN);
                         audioEle.setAttribute('src', soundUrl);
@@ -916,6 +967,7 @@
 
                             clickAudio.addEventListener('ended', function() {
                                 $btn.removeClass('off');
+                                $('.clone-box').remove();
                                 $body.removeClass('ing-audio');
                                 $body.data('audioplay', 'false');
                             });
@@ -923,10 +975,13 @@
                             clickAudio.pause();
                             clickAudio.currentTime = 0;
                             $btn.removeClass('off');
+                            $('.clone-box').remove();
                             $body.removeClass('ing-audio');
                             $body.data('audioplay', 'false');
                         }
                     }
+
+        
 
 
 
