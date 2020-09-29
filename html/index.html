@@ -839,17 +839,6 @@
                         });
 
                         $(win).off('scroll.win').on('scroll.win', lineCheck);
-
-                        function lineCheck(){
-                            var len = $('.page-content.on').find('.line').length;
-                            var v = $(win).scrollTop() + $(win).outerHeight();
-
-                            for (var i = 0; i < len; i++) {
-                                if (v > $('.page-content.on').find('.line').eq(i).position().top) {
-                                    $('.page-content.on').find('.line').eq(i).addClass('on');
-                                }
-                            }
-                        }
                     }
 
                     $plugins.audio = {}
@@ -886,9 +875,9 @@
                         var $body = $("body");
                         var $btn = $('.btn-talk');
 
-                        var cloneBox;
-                        console.log(v, !$('body.detail').length);
-                        if (!$('body.detail').length) {
+                        var cloneBox = null;
+                        
+                        
                             switch(v) {
                                 case '0' :
                                     cloneBox = $('.slidepage-item.type-b .page-box').clone();
@@ -911,11 +900,13 @@
                                     $('body').append('<div class="clone-box type-e"></div>');
                                 break;
 
-                                default:
+                                default: cloneBox = null;
                                 break;
                             }
+                            if(cloneBox !== null){
                             $('.clone-box').append(cloneBox);
-                            cloneBox = '';
+                            }
+cloneBox = '';
                         }
 
                         
@@ -981,6 +972,16 @@
                         }
                     }
 
+                    function lineCheck(){
+                            var len = $('.page-content.on').find('.line').length;
+                            var v = $(win).scrollTop() + $(win).outerHeight();
+
+                            for (var i = 0; i < len; i++) {
+                                if (v > $('.page-content.on').find('.line').eq(i).position().top) {
+                                    $('.page-content.on').find('.line').eq(i).addClass('on');
+                                }
+                            }
+                        }
         
 
 
